@@ -17,7 +17,7 @@ import {
 
 import { loginHandler, useSession } from '../hooks/useAuth';
 
-export default function({ setmodal }) {
+export default function({ setmodal, sort, setsort }) {
   const [navState, setnavState] = useState(false);
   const { auth } = useSession();
   if (auth) {
@@ -34,6 +34,13 @@ export default function({ setmodal }) {
             </MDBNavItem>
             <MDBNavItem>
               <MDBNavLink onClick={() => setmodal(true)}>Create</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
+              <MDBNavLink
+                onClick={() => setsort(sort === 'date' ? 'title' : 'date')}
+              >
+                Sort By: {sort === 'date' ? 'Date' : 'Title'}
+              </MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>
           <MDBNavbarNav right>

@@ -44,7 +44,21 @@ export const loginHandler = type => {
               email: res.user.email,
               name: res.user.displayName,
               profile: res.user.photoURL,
+            })
+            .then(res => {
+              if (res.additionalUserInfo.isNewUser) {
+                firestore
+                  .collection('users')
+                  .doc(res.user.uid)
+                  .collection('tasks')
+                  .add({
+                    title: `Let's Get Started`,
+                    subtitle: `Tap the three bars and select "create"`,
+                  });
+              }
             });
+
+          console.log(res.additionalUserInfo.isNewUser);
         });
     default:
       console.log('ran');
