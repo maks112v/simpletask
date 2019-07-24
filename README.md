@@ -1,14 +1,14 @@
-<h1 align="center">Welcome to [Project Name]👋</h1>
+<h1 align="center">Welcome to Simple Task👋</h1>
 <p>
   <img src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/giturl.git">
+  <a href="https://github.com/maks112v/simpletask/">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
 </p>
 
 > The fastest way to start with firebase
 
-### 🏠 [Homepage](Project Url)
+### 🏠 [Homepage](https://simpletask.maksv.me/loginl)
 
 ## Install
 
@@ -20,7 +20,7 @@ npm install
 
 👤 ** Your Name **
 
-- Github: [Git Name](GitUrl)
+- Github: [maks112v](https://github.com/maks112v)
 
 ## Show your support
 
