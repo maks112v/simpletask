@@ -45,7 +45,7 @@ export const loginHandler = type => {
               name: res.user.displayName,
               profile: res.user.photoURL,
             })
-            .then(res => {
+            .then(user => {
               if (res.additionalUserInfo.isNewUser) {
                 firestore
                   .collection('users')
@@ -54,6 +54,7 @@ export const loginHandler = type => {
                   .add({
                     title: `Let's Get Started`,
                     subtitle: `Tap the three bars and select "create"`,
+                    date: Date.now(),
                   });
               }
             });

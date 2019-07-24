@@ -34,7 +34,7 @@ export default function Todo({ title, subtitle, date, complete, id }) {
         </MDBCardBody>
         <div
           className={`${
-            complete ? 'success-color-dark' : 'info-color-dark'
+            complete ? 'success-color-dark' : 'danger-color-dark'
           } rounded-bottom lighten-3 text-center p-3 text-left`}
         >
           <MDBRow>
@@ -47,9 +47,9 @@ export default function Todo({ title, subtitle, date, complete, id }) {
               onClick={() => toggleComplete()}
             >
               {complete ? (
-                <MDBIcon far icon="times-circle" />
-              ) : (
                 <MDBIcon icon="check" />
+              ) : (
+                <MDBIcon far icon="times-circle" />
               )}
             </MDBCol>
           </MDBRow>

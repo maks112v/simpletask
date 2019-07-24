@@ -19,7 +19,7 @@ export default function Dashboard() {
       .collection('users')
       .doc(auth.uid)
       .collection('tasks')
-      .orderBy(sort, 'asc')
+      .orderBy(sort, 'desc')
       .onSnapshot(snapshot => {
         let todos = [];
         snapshot.docs.forEach(doc => {
@@ -36,7 +36,7 @@ export default function Dashboard() {
       <Navbar setmodal={setmodal} sort={sort} setsort={setsort} />
       <MDBContainer className="mt-5">
         <CreateTodo modal={modal} setmodal={setmodal} />
-        <MDBRow>
+        {/* <MDBRow>
           {todos.map(({ title, subtitle, date, id, complete }) => (
             <Todo
               title={title}
@@ -46,6 +46,38 @@ export default function Dashboard() {
               complete={complete}
             />
           ))}
+        </MDBRow> */}
+        <h3>Uncomplete Tasks</h3>
+        <MDBRow>
+          {todos.map(({ title, subtitle, date, id, complete }) => {
+            if (!complete) {
+              return (
+                <Todo
+                  title={title}
+                  subtitle={subtitle}
+                  id={id}
+                  date={date}
+                  complete={complete}
+                />
+              );
+            }
+          })}
+        </MDBRow>
+        <h3>Completed Tasks</h3>
+        <MDBRow>
+          {todos.map(({ title, subtitle, date, id, complete }) => {
+            if (complete) {
+              return (
+                <Todo
+                  title={title}
+                  subtitle={subtitle}
+                  id={id}
+                  date={date}
+                  complete={complete}
+                />
+              );
+            }
+          })}
         </MDBRow>
       </MDBContainer>
     </>
