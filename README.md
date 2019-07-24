@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> The fastest way to start with firebase
+> The easiest way to store your tasks
 
 ### 🏠 [Homepage](https://simpletask.maksv.me/loginl)
 
