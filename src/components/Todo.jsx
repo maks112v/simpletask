@@ -25,6 +25,15 @@ export default function Todo({ title, subtitle, date, complete, id }) {
       .update({ complete: !complete });
   }
 
+  function deleteTask() {
+    firestore
+      .collection('users')
+      .doc(auth.uid)
+      .collection('tasks')
+      .doc(id)
+      .delete();
+  }
+
   return (
     <MDBCol md="6" lg="4" sm="12" className="my-3">
       <MDBCard>
@@ -38,11 +47,19 @@ export default function Todo({ title, subtitle, date, complete, id }) {
           } rounded-bottom lighten-3 text-center p-3 text-left`}
         >
           <MDBRow>
-            <MDBCol className="white-text" style={{ flexGrow: 1 }}>
+            <MDBCol sm="8" className="white-text" style={{ flexGrow: 1 }}>
               <MDBIcon far icon="clock" className="mr-2 " />
               {date ? moment(date).fromNow() : null}
             </MDBCol>
             <MDBCol
+              sm="2"
+              className="white-text text-right"
+              onClick={() => deleteTask()}
+            >
+              <MDBIcon fas icon="trash" />
+            </MDBCol>
+            <MDBCol
+              sm="2"
               className=" white-text text-right"
               onClick={() => toggleComplete()}
             >
