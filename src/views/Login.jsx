@@ -16,7 +16,7 @@ export default function Login() {
     <MDBContainer fluid>
       <MDBRow style={{ height: '100vh', textAlign: 'center' }}>
         <MDBCol middle md="6">
-          <h3>Login</h3>
+          <h3>Login to Simple Task</h3>
           <MDBBtn
             social="gplus"
             color="danger"
